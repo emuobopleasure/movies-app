@@ -2,13 +2,6 @@ import React from 'react'
 
 const SearchForm = ({searchTerm, handleChange}) => {
 
-  // const handleChange = (e) => {
-  //   setSearchTerm(e.target.value)
-  //   fetchMovies(e.target.value)
-  //   console.log(searchTerm)
-  // }
-
-
 
   return (
     <section className='form-section px-[28px] md:px-[77px]'>

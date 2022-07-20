@@ -10,15 +10,19 @@ const Main = () => {
  
   const url = 'https://www.omdbapi.com/?i=tt3896198&apikey=13849d19&'
 
+  let data;
+
   const fetchMovies = async (title) => {
     const response = await fetch(`${url}&s=${title}`)
-    const data = await response.json()
+    data = await response.json()
     console.log(data)
     setMovies(data.Search)
   }
 
   const searchMovie = (search) => {
-    return data.movies.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+    // return data.movies.filter(item => item.name
+    //   .toLowerCase()
+    //   .includes(search.toLowerCase()))
   }
 
   const handleChange = (e) => {
