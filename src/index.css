@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../public/fonts/DMSans-Regular.woff');
+}
+
+
+.hero-section {
+  background-image: url('../public/hero-image.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 257px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-section {
+    background-image: url('../public/hero-tab.png');
+    height: 550px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-section {
+    background-image: url('../public/hero-desktop.png');
+    height: 550px;
+  }
+}
