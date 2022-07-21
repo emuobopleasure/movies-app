@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Movie from './Movie'
 
-const MovieList = ({movies, setMovies, fetchMovies }) => {
+const MovieList = ({movies}) => {
 
   
 

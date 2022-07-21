@@ -11,7 +11,6 @@ const SearchForm = ({searchTerm, handleChange}) => {
         <input type='text' value={searchTerm}
           onChange={handleChange}
         //  onChange={(e) => setSearchTerm(e.target.value)}
-        //  onClick={(term) => fetchMovies(searchTerm)}
          className='search-input border border-[#000000] h-[34px] md:h-[54px] w-full mx-auto'/>
     </section>
   )

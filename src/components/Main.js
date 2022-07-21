@@ -8,53 +8,43 @@ const Main = () => {
   const [movies, setMovies] = useState([])
 
  
-  const url = 'https://www.omdbapi.com/?i=tt3896198&apikey=13849d19&'
+  
+  // let data;
+  
+  const fetchMovies = async (searchTerm) => {
 
-  let data;
+    const url = `https://www.omdbapi.com/?s=${searchTerm}&apikey=13849d19&`
 
-  const fetchMovies = async (title) => {
-    const response = await fetch(`${url}&s=${title}`)
-    data = await response.json()
+    const response = await fetch(`${url}`)
+    const data = await response.json()
     console.log(data)
-    setMovies(data.Search)
+    if (data.Search) {
+      setMovies(data.Search)
+    }
+    console.log('film', movies)
   }
-
-  const searchMovie = (search) => {
-    // return data.movies.filter(item => item.name
-    //   .toLowerCase()
-    //   .includes(search.toLowerCase()))
-  }
-
+  
   const handleChange = (e) => {
     setSearchTerm(e.target.value)
-    let res = searchMovie(e.target.value)
-    console.log('res', res)
   }
 
   useEffect(() => {
-    fetchMovies()
-  }, [])
+    fetchMovies('Batman')
+    fetchMovies(searchTerm)
+  }, [searchTerm])
 
   return (
     <main>
         <div className='main my-[4rem] flex flex-col gap-[1.5rem] md:gap-[3.2rem]'>
             <SearchForm 
               searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              searchMovie={searchMovie}
               handleChange={handleChange}
               />
             <MovieList
               movies={movies}
-              setMovies={setMovies}
-              fetchMovies={fetchMovies}
-              url={url}
             />
             <MovieList
               movies={movies}
-              setMovies={setMovies}
-              fetchMovies={fetchMovies}
-              url={url}
             />
         </div>
     </main>
